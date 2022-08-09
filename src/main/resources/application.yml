@@ -1,0 +1,14 @@
+server:
+  port: 8081
+graphql:
+  servlet:
+    max-query-depth: 2
+  playground:
+    page-title: GraphQL Spring Boot
+    headers:
+      Authorization: Basic Token
+    tabs:
+      - name: Bank Account Query
+        query: classpath:playground/bank_account.graphql
+        variables: classpath:playground/bank_account_variables.json
+#    enabled: off
