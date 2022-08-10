@@ -13,5 +13,8 @@ public class GraphqlExceptionHandler {
     public ThrowableGraphQLError handle(GraphQLException e){
         return new ThrowableGraphQLError(e);
     }
-
+    @ExceptionHandler(RuntimeException.class)
+    public ThrowableGraphQLError handle(RuntimeException e){
+        return new ThrowableGraphQLError(e, "Internal Server Error");
+    }
 }
