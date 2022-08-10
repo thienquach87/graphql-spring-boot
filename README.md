@@ -175,3 +175,41 @@ query GET_BANK_ACCOUNT($id: ID!){
   }
 }
 ```
+--------------------------------------------------------------------------
+## Data Fetcher Result
+### Query.
+```
+query GET_BANK_ACCOUNT($id: ID!){
+    bankAccount(id: $id)  { # Bank account query resolver
+        id
+        currency
+        client { # Client account query resolver
+            id
+            firstName
+            lastName
+        }
+    }
+}
+```
+#### Result:
+```json
+{
+  "errors": [
+    {
+      "message": "Could not get sub-client id",
+      "locations": []
+    }
+  ],
+  "data": {
+    "bankAccount": {
+      "id": "24104cba-e43d-4431-b24a-30748b42f7a8",
+      "currency": "USD",
+      "client": {
+        "id": "ba376a05-d389-42eb-ae79-80450506ae6e",
+        "firstName": "Thien1",
+        "lastName": "Quach"
+      }
+    }
+  }
+}
+```
