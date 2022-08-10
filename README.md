@@ -2,6 +2,7 @@
 ##  #1 - Apply Client object to GraphQl
 ### Run example:
 #### Write your query or mutation here
+#### Access to http://localhost:8081/playground to do these queries.
 ```
 query GET_BANK_ACCOUNT($id: ID){
     bankAccount(id: $id) {
@@ -28,4 +29,4 @@ query GET_BANK_ACCOUNT($id: ID){
   }
 }
 ```
-
+#### Access to http://localhost:8081/voyager to see how voyager work.
