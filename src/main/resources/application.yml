@@ -3,6 +3,7 @@ server:
 graphql:
   servlet:
     max-query-depth: 2
+    exception-handlers-enabled: true
   playground:
     page-title: GraphQL Spring Boot
     headers:
