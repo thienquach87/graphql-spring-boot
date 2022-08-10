@@ -141,3 +141,37 @@ query GET_BANK_ACCOUNT($id: ID!){
   }
 }
 ```
+------------------------------------------------------------
+## Exception Handling
+### Start server then run the query below based on each commit to see the exception message for each case.
+```
+query GET_BANK_ACCOUNT($id: ID!){
+    bankAccount(id: $id)  { # Bank account query resolver
+        id
+        currency
+        client { # Client account query resolver
+            id
+            firstName
+            lastName
+        }
+    }
+}
+```
+#### Result:
+```json
+{
+  "errors": [
+    {
+      "message": "Internal Server Error",
+      "locations": []
+    }
+  ],
+  "data": {
+    "bankAccount": {
+      "id": "24104cba-e43d-4431-b24a-30748b42f7a8",
+      "currency": "USD",
+      "client": null
+    }
+  }
+}
+```
