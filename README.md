@@ -143,7 +143,7 @@ query GET_BANK_ACCOUNT($id: ID!){
 ```
 ------------------------------------------------------------
 ## Exception Handling
-### Start server then run the query below based on each commit to see the exception message for each case.
+### Start server then run the query below on each commit to see the exception message for each case.
 ```
 query GET_BANK_ACCOUNT($id: ID!){
     bankAccount(id: $id)  { # Bank account query resolver
