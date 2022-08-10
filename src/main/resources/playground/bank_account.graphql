@@ -1,7 +1,9 @@
 #Get bank account
 query GET_BANK_ACCOUNT($id: ID!){
-    bankAccount(id: $id) {
-        client{
+    bankAccount(id: $id) { # Bank account query resolver
+        id
+        currency
+        client { # Client account query resolver
             id
             firstName
             lastName
